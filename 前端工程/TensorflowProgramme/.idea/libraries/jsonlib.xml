@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="jsonlib">
+    <CLASSES>
+      <root url="file://D:/Eclipse拓展包/jsonlib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://D:/Eclipse拓展包/jsonlib" recursive="false" />
+  </library>
+</component>

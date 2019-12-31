@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="assets/img/basic/favicon.ico" type="image/x-icon">
+    <title>网易云音乐数据分析</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/app.css">
+    <script type="text/javascript" src="./js/echarts.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+</head>
+<body class="light sidebar-mini loaded sidebar-open">
+<!-- Pre loader -->
+<div id="loader" class="loader">
+    <div class="plane-container">
+        <div class="preloader-wrapper small active">
+            <div class="spinner-layer spinner-blue">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
+
+            <div class="spinner-layer spinner-red">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
+
+            <div class="spinner-layer spinner-yellow">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
+
+            <div class="spinner-layer spinner-green">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="app">
+    <aside class="main-sidebar fixed offcanvas b-r sidebar-tabs" data-toggle='offcanvas' style="width: 270px">
+        <div class="sidebar">
+            <div class="d-flex hv-100 align-items-stretch">
+                <div class="tab-content flex-grow-1" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                         aria-labelledby="v-pills-home-tab">
+                        <div class="relative brand-wrapper sticky b-b">
+                            <div class="d-flex justify-content-between align-items-center p-3">
+                                <div class="text-xs-center">
+                                    <span class="font-weight-lighter s-18">Menu</span>
+                                </div>
+                                <div class="badge badge-danger r-0">New Panel</div>
+                            </div>
+                        </div>
+                        <ul class="sidebar-menu">
+                            <li class="treeview"><a href="#"><i class="icon icon-account_box s-24"></i>用户分析<i
+                                    class=" icon-angle-left  pull-right"></i></a>
+                                <ul class="treeview-menu">
+                                    <li><a href="xingzuo.html"><i class="icon icon-circle-o"></i>星座分布</a>
+                                    </li>
+                                    <li><a href="china_map2.html"><i class="icon icon-circle-o"></i>地域分布</a>
+                                    </li>
+                                    <li><a href="gender.html"><i class="icon icon-circle-o"></i>性别分布</a>
+                                    </li>
+                                    <li><a href="dengji.html"><i class="icon icon-circle-o"></i>等级分布</a>
+                                    </li>
+                                    <li><a href="age.html"><i class="icon icon-circle-o"></i>年龄分布</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="treeview ">
+                                <a href="#">
+                                    <i class="icon icon-wpforms  s-24 "></i> <span>热门歌曲评论分析</span>
+                                    <i class=" icon-angle-left  pull-right"></i>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="song_1.html"><i class="icon icon-circle-o"></i>DanceMonkey</a>
+                                    </li>
+                                    <li><a href="song_2.html"><i class="icon icon-circle-o"></i>出山</a>
+                                    </li>
+                                    <li><a href="song_3.html"><i class="icon icon-circle-o"></i>飞</a>
+                                    </li>
+                                    <li><a href="song_4.html"><i class="icon icon-circle-o"></i>好想爱这个世界啊</a>
+                                    </li>
+                                    <li><a href="song_5.html"><i class="icon icon-circle-o"></i>麻雀</a>
+                                    </li>
+                                    <li><a href="song_6.html"><i class="icon icon-circle-o"></i>没有理由</a>
+                                    </li>
+                                    <li><a href="song_7.html"><i class="icon icon-circle-o"></i>你的答案</a>
+                                    </li>
+                                    <li><a href="song_8.html"><i class="icon icon-circle-o"></i>陪你去流浪</a>
+                                    </li>
+                                    <li><a href="song_9.html"><i class="icon icon-circle-o"></i>世间美好与你环环相扣</a>
+                                    </li>
+                                    <li><a href="song_10.html"><i class="icon icon-circle-o"></i>下山</a>
+                                    </li>
+                                    <li><a href="song_11.html"><i class="icon icon-circle-o"></i>嚣张</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="has-sidebar-left">
+        <div class="pos-f-t">
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="bg-dark pt-2 pb-2 pl-4 pr-2">
+                    <div class="search-bar">
+                        <input class="transparent s-24 text-white b-0 font-weight-lighter w-128 height-50" type="text"
+                               placeholder="start typing...">
+                    </div>
+                    <a href="#" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-expanded="false"
+                       aria-label="Toggle navigation" class="paper-nav-toggle paper-nav-white active "><i></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<a href="#" data-toggle="push-menu" class="paper-nav-toggle left ml-2 fixed">
+        <i></i>
+    </a>-->
+    <div class="has-sidebar-left has-sidebar-tabs">
+        <!--navbar-->
+        <!--#navbar-->
+        <div class="container-fluid">
+            <div style="height: 700px;position: relative">
+                <img src="img/DanceMonkey.png" style="position: absolute;top: 150px;left:20px;width: 400px;height: 400px">
+                <div id="song-map" style="position: absolute;top: 150px;left:450px;width:700px;height:400px"></div>
+            </div>
+            <script>
+                var myChart = echarts.init(document.getElementById('song-map'));
+                var datas={
+                    songname:'DanceMonkey'
+                };
+                $.ajax({
+                    url:'SongServelet?method=GetSongData',
+                    type:'post',
+                    dataType:'json',
+                    data:datas,
+                    success:function(data){
+                        console.log(data);
+                        option = {
+                            title: [{
+                                show: true,
+                                text: 'DanceMonkey评论情感分析',
+                                textStyle: {
+                                    color: '#2D3E53',
+                                    fontSize: 18
+                                },
+                                left: 50,
+                                top: 0
+                            }],
+                            grid: {
+                                top:'30',
+                                left: 30,
+                                // right: '30%',
+                                bottom: '5',
+                                // containLabel: true
+                            },
+                            // title: {text: '供应商产品质量'},
+                            tooltip:{show:true,trigger:'item'},
+                            legend: {
+                                right: 0,
+                                icon: 'circle',
+                                itemWidth: 12,
+                                data: ['积极评论', '消极评论']
+                            },
+                            xAxis: {
+                                // data: [],
+                                // type: 'value',
+                                show: false
+                            },
+                            yAxis: {
+                                type: 'category',
+                                show: false,
+                                inverse:true,
+                                data:['情感分析'],
+                                axisTick: {
+                                    show: false
+                                }
+                            },
+                            series: [{
+                                type: 'bar',
+                                name: '积极评论',
+                                data: [data.values.positive_num],
+                                stack: '柱子',
+                                // barWidth: '20%',
+                                barMaxWidth: '30',
+                                color:'#f76f34',
+                                itemStyle:{
+                                    barBorderRadius:[8,0,0,8]
+                                },
+                                label: {
+                                    normal: {
+                                        show: true,
+                                        position: 'inside',
+                                        formatter: function(obj) {
+                                            return obj.value + '条';
+                                        }
+                                    }
+                                }
+                            }, {
+                                type: 'bar',
+                                name: '消极评论',
+                                data: [data.values.negative_num],
+                                stack: '柱子',
+                                // barWidth: '20%',
+                                barMaxWidth: '30',
+                                color:'#3393e2',
+                                itemStyle:{
+                                    barBorderRadius:[0,8,8,0]
+                                },
+                                label: {
+                                    normal: {
+                                        show: true,
+                                        position: 'inside',
+                                        formatter: function(obj) {
+                                            return obj.value + '条';
+                                        }
+                                    }
+                                }
+                            },
+                                {
+                                    name: '图标',
+                                    type: 'scatter',
+                                    hoverAnimation: false,
+                                    symbolSize: 25,
+                                    cursor: 'default',
+                                    data: [{
+                                        value: -1,
+                                    }],
+                                    tooltip:{
+                                        formatter: function (params) {
+                                            return params.name;
+                                        }
+                                    },
+                                    symbolOffset: [-20, 0],
+                                }
+                            ]
+                        };
+                        myChart.setOption(option);
+                    }
+                });
+            </script>
+        </div>
+    </div>
+
+    <!-- Add the sidebar's background. This div must be placed
+             immediately after the control sidebar -->
+    <div class="control-sidebar-bg shadow white fixed"></div>
+</div>
+<!--/#app -->
+<script src="assets/js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="JavaProgramme:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/JavaProgramme_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="JavaProgramme/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="JavaProgramme" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="jsonlib" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
